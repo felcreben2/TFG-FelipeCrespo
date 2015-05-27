@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ipuni">"10.100.56.223"</string>
+    <string name="ip">"10.100.56.223"</string>
+    <string name="app_name">Flayware</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="detallepartida">Partida</string>
+    <string name="nombre">Nombre</string>
+    <string name="modificar">Modificar Jugador</string>
+    <string name="modificarconf">Confirmar modificar</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="puntuacion">Puntuacion</string>
+     <string name="userlogin">Login Usuario</string>
+    <string name="usuario">Usuario</string>
+    <string name="usuarios">Lista de Jugadores</string>
+    <string name="password">Contraseña</string>
+    <string name="pfinalizar">Finalizar</string>
+    <string name="registro">Registro Jugador</string>
+    <string name="ganador">Ganador</string>
+    <string name="login">Acceder</string>
+    <string name="retos">Retos Disponibles</string>
+    <string name="psiguiente">Siguiente</string>
+    <string name="patras">Atras</string>
+    <string name="cursos">Cursos</string>
+    <string name="exit">Salir</string>
+    <string name="salir">Salir</string>
+    <string name="user">Usuario registrado</string>
+    <string name="register">Registrarse</string> 
+    <string name="ranking">Ranking</string>
+    <string name="activas">Activas</string>
+    <string name="terminadas">Terminadas</string>
+    <string name="partidas">Partidas</string>
+    <string name="pendientes">Pendientes</string>
+    <string name="cargando">Cargando...</string>
+    <string name="descargas">Descargar</string>
+    <string name="detallecurso">Detalles curso</string>
+    <string name="nombrecurso">Nombre Curso: </string>
+    <string name="tematicacurso">Tematica Curso: </string>
+    <string name="numpreguntascurso">Num.Preguntas: </string>
+    <string name="descargass">Descargas</string>
+    <string name="partida">Partida</string>
+    <string name="vacio">Vacio</string>
+    <string name="volver">Volver</string>
+    <string name="back">Salir</string>
+     <string name="link2">https://docs.google.com/document/d/1Cy2YRAc2iABEXUjUPHQ3Sz44Ylg3Pn2C8rm93o6zPuk/view?usp=sharing</string>
+     <string name="link3">https://drive.google.com/file/d/0B4I1otPqRkmlSERURlhHZGpzcHM/view?usp=sharing</string>
+    <string name="link">https://drive.google.com/file/d/0B4I1otPqRkmlQUxiYmJoVnhWelU/view?usp=sharing</string>
+    <string name="access">FLAYWARE</string>
+    <string name="menu">MENU</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="passwordagain">Repetir Contraseña</string>
+    <string name="registrar">Confirmar registro</string>
+    <string name="name">Nombre</string>
+    <string name="email">Apellido</string>
+    <string name="surname">Email</string>
+    <string name="nombrereto">Nombre:</string>
+    <string name="tiempomaxreto">Tiempo Maximo:</string>
+    <string name="fechamax">Fecha Valida hasta:</string>
+    <string name="detallereto">Detalles Reto</string>
+    <string name="iniciarreto">Inscribirte a Partida</string>
+    <color name="black">#000000</color>
+    <color name="radioo">#DF013A</color>
+    <color name="pink">#FF0040</color>
+    <color name="white">#FFFFFF</color>
+    
+
+</resources>

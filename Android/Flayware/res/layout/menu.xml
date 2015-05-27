@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:baselineAligned="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/textbienvenida"
+            android:layout_width="256dp"
+            android:layout_height="70dp"
+            android:src="@drawable/menu"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/editar"
+            android:layout_width="42dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/editperfil" />
+        
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button                    
+               		android:id="@+id/cursos"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/listdos" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cursos"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+               		android:id="@+id/partidas"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/strt" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/partida"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+               		android:id="@+id/retos"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/insctres" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/retos"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold"/>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:orientation="vertical"
+                android:paddingRight="20px" >
+
+                <Button
+               		android:id="@+id/ranking"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/dddd" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/ranking"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/descargar"
+                    android:layout_width="76dp"
+                    android:layout_height="77dp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/download" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/descargas"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold"/>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/salir"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:background="@drawable/exit" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/salir"
+                    android:paddingTop="10sp"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold" />
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black">
+     <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="268dp"
+        android:layout_weight="7.43"
+      android:paddingBottom="7dp"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:paddingTop="7dp" 
+      >
+		
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:fontFamily="comic-sans"
+             android:gravity="center"
+             android:text="@string/registro"
+             android:textColor="@color/white"
+             android:textStyle="bold|italic" />
+    
+
+   
+
+        <TableRow
+            android:id="@+id/TextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal" >
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/Name1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription=""
+                android:inputType="text"
+                android:textColor="@color/white" >
+
+                <requestFocus />
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TextSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal" >
+
+            <TextView
+                android:id="@+id/Surname"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/surname"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/Surname1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textColor="@color/white" >
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TextEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal" >
+
+            <TextView
+                android:id="@+id/Email"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/email"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/Email1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" >
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TextUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal" >
+
+            <TextView
+                android:id="@+id/User"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/usuario"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/NewUser"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textColor="@color/white" >
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/Password"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/password"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/NewPasswordText1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:textColor="@color/white" >
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/WritePassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Password2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity=""
+                android:text="@string/passwordagain"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/NewPasswordAgain"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:textColor="@color/white" />
+        </TableRow>
+   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="7dp" >
+
+        <Button
+            android:id="@+id/AcceptRegister"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="33dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:background="@drawable/saphe"
+            android:gravity="center"
+            android:text="@string/registrar"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="7dp" >
+
+        <Button
+        android:id="@+id/Cancel"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapevolver"
+        android:gravity="center"
+        android:text="@string/cancelar"
+        android:textColor="@color/white" />
+
+    </RelativeLayout>
+     </TableLayout>
+
+</ScrollView>

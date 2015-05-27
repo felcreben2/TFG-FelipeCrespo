@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles_es.xml
+ *
+ * Copyright (C) 2013 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="jugador/administrador/listaJugadores" extends="master.page">	
+		<put-attribute name="title" value="Lista de Jugadores" />
+		<put-attribute name="body" value="/views/jugador/list.jsp" />
+	</definition> 
+	
+	<definition name="jugador/administrador/listaBanneados" extends="master.page">	
+		<put-attribute name="title" value="Lista de jugadores baneados" />
+		<put-attribute name="body" value="/views/jugador/list.jsp" />
+	</definition> 
+	
+	<definition name="jugador/administrador/detalles" extends="master.page">	
+		<put-attribute name="title" value="Detalles Jugador" />
+		<put-attribute name="body" value="/views/jugador/details.jsp" />
+	</definition>  
+	
+	<definition name="curso/administrador/edit" extends="master.page">	
+		<put-attribute name="title" value="Editar curso" />
+		<put-attribute name="body" value="/views/curso/edit.jsp" />
+	</definition> 
+	
+	<definition name="curso/administrador/detalles" extends="master.page">	
+		<put-attribute name="title" value="Detalles curso" />
+		<put-attribute name="body" value="/views/curso/details.jsp" />
+	</definition> 
+	
+	<definition name="curso/administrador/eleccion" extends="master.page">	
+		<put-attribute name="title" value="Pregunta por curso" />
+		<put-attribute name="body" value="/views/curso/eleccion.jsp" />
+	</definition> 
+	
+</tiles-definitions>

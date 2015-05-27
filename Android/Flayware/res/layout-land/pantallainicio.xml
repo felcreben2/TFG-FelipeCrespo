@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background= "@color/black" >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+     <ImageView
+         android:id="@+id/imageView"
+         android:layout_width="540dp"
+         android:layout_height="76dp"
+         android:src="@drawable/pruebabaa" />
+
+    </LinearLayout>
+  
+<LinearLayout
+    android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"  >
+    <Button
+        android:id="@+id/ButtonUser"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user"
+        android:textColor="@color/white" 
+        android:background="@drawable/saphe"/>
+
+   </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="7dp"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:paddingTop="7dp" >
+
+    <Button
+        android:id="@+id/ButtonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:background="@drawable/sapheregistrarse"/>
+</LinearLayout>
+<LinearLayout
+android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"  >
+    <Button
+        android:id="@+id/ButtonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:background="@drawable/shapevolver"  />
+</LinearLayout>
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/otroooo" 
+        android:background="@color/black"/>
+
+</LinearLayout>

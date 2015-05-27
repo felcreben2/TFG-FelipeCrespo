@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:orientation="vertical" >
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dip"
+        android:fontFamily="comic-sans"
+        android:gravity="center"
+        android:text="@string/detallereto"
+        android:paddingTop="20sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+    <TableRow
+        android:id="@+id/NombreRetoRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal" 
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp" >
+
+        <TextView
+            android:id="@+id/NombreReto"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="@string/nombrereto"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NombreRetoMostrar"
+            android:layout_width="0dip"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+        android:layout_marginBottom="30dip"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/TiempoMax"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp" >
+
+        <TextView
+            android:id="@+id/TiempoMaxReto"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="@string/tiempomaxreto"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TiempoMaxMostrar"
+            android:layout_width="0dip"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+        android:layout_marginBottom="30dip"/>
+        
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/FechaValida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp" >
+
+        <TextView
+            android:id="@+id/FechaMaxReto"
+            android:layout_width="0dip"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/fechamax"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/FechaMaxMostrar"
+            android:layout_width="0dip"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:layout_marginBottom="160dip"
+         />
+
+        <Button
+            android:id="@+id/iniciarreto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/iniciarreto"
+            android:paddingRight="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:background="@drawable/saphe" />
+        
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+      android:paddingBottom="7dp"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:paddingTop="7dp" >
+
+        <Button
+        android:id="@+id/bvolver"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/volver"
+        android:background="@drawable/shapevolver"/>
+    </LinearLayout>
+
+</TableLayout>

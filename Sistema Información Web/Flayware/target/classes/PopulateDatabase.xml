@@ -1,0 +1,3971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User accounts -->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="jugador1" />
+		<property name="password" value="875f6459941ecb5bd7779ab19f2f0956" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="jugador2" />
+		<property name="password" value="6007ad740d8673c998b11dc4b73a723c" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="felipe" />
+		<property name="password" value="7e04da88cbb8cc933c7b89fbfe121cca" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="citorelinque" />
+		<property name="password" value="4cde25707aaab87422460277fb8ed54f" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="franluis" />
+		<property name="password" value="ff1ffe0c0d1b752aaa6bbe085fe2e974" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="jugador3" />
+		<property name="password" value="1df6740b469458b7842ccb09f20f1749" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="jugador4" />
+		<property name="password" value="234856ee05e791347a037d7ae03e49e2" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount9" class="security.UserAccount">
+		<property name="username" value="jugador5" />
+		<property name="password" value="57c97fe762ade7203e37754f206054d7" />
+		<property name="active" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="JUGADOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Other domain beans come here -->	
+	<bean id="admin1" class="domain.Administrador">
+		<property name="userAccount" ref="userAccount1" />
+		<property name="name" value="Administrador" />
+		<property name="surname" value="AdministradorApellido" />
+		<property name="email" value="admin@gmail.com" />
+		<property name="cursos">
+			<list>
+				<ref bean="curso2" />
+			</list>
+		</property>	
+		<property name="retos">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="admin2" class="domain.Administrador">
+		<property name="userAccount" ref="userAccount4" />
+		<property name="name" value="Felipe" />
+		<property name="surname" value="Crespo" />
+		<property name="email" value="felipebarbate@gmail.com" />
+		<property name="cursos">
+			<list>
+				<ref bean="curso1" />
+			</list>
+		</property>	
+		<property name="retos">
+			<list>
+				<ref bean="reto1" />
+				<ref bean="reto2" />
+				<ref bean="reto3" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="jugador1" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount2" />
+		<property name="name" value="Maria Jose" />
+		<property name="surname" value="Escalona" />
+		<property name="email" value="felipebarbate@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes1" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador2" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount3" />
+		<property name="name" value="Carlos" />
+		<property name="surname" value="Arevalo" />
+		<property name="email" value="carlosarevalo@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes2" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador3" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount5" />
+		<property name="name" value="Cito" />
+		<property name="surname" value="Relinque" />
+		<property name="email" value="cito@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador4" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount6" />
+		<property name="name" value="Fran Luis" />
+		<property name="surname" value="Duarte Alvarado" />
+		<property name="email" value="franluis@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes6" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador5" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Jugador3" />
+		<property name="surname" value="Juega Tres" />
+		<property name="email" value="juegatres@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes3" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador6" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount8" />
+		<property name="name" value="Jugador4" />
+		<property name="surname" value="Juega cuatro" />
+		<property name="email" value="juegacuatro@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes4" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="jugador7" class="domain.Jugador">
+		<property name="userAccount" ref="userAccount9" />
+		<property name="name" value="Jugador5" />
+		<property name="surname" value="Juega cinco" />
+		<property name="email" value="juegacinco@gmail.com" />
+		<property name="resultadoParticipantes">
+			<list>
+				<ref bean="resultadoparticipantes5" />
+			</list>
+		</property>	
+	</bean>
+	
+	<!-- CURSOS -->
+	
+	<bean id="curso1" class="domain.Curso">
+		<property name="administrador" ref="admin2" />
+		<property name="numeroPreguntas" value="20" />
+		<property name="tematica" value="Introducción. Definición completa. Cuando estará disponible en un futuro." />
+		<property name="nombre" value="Fiware Introducción" />
+		<property name="retos">
+			<list>
+				<ref bean="reto1" />
+				<ref bean="reto2" />
+				<ref bean="reto3" />
+			</list>
+		</property>	
+		<property name="preguntas">
+			<list>
+				<ref bean="pregunta1" />
+				<ref bean="pregunta2" />
+				<ref bean="pregunta3" />
+				<ref bean="pregunta4" />
+				<ref bean="pregunta5" />
+				<ref bean="pregunta6" />
+				<ref bean="pregunta7" />
+				<ref bean="pregunta8" />
+				<ref bean="pregunta9" />
+				<ref bean="pregunta10" />
+				<ref bean="pregunta11" />
+				<ref bean="pregunta12" />
+				<ref bean="pregunta13" />
+				<ref bean="pregunta14" />
+				<ref bean="pregunta15" />
+				<ref bean="pregunta16" />
+				<ref bean="pregunta17" />
+				<ref bean="pregunta18" />
+				<ref bean="pregunta19" />
+				<ref bean="pregunta20" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="curso2" class="domain.Curso">
+		<property name="administrador" ref="admin1" />
+		<property name="numeroPreguntas" value="20" />
+		<property name="tematica" value="Kurento. Definición completa. Cuando estará disponible en un futuro." />
+		<property name="nombre" value="Fiware Kurento" />
+		<property name="retos">
+			<list>
+			</list>
+		</property>	
+		<property name="preguntas">
+			<list>
+				<ref bean="pregunta21" />
+				<ref bean="pregunta22" />
+				<ref bean="pregunta23" />
+				<ref bean="pregunta24" />
+				<ref bean="pregunta25" />
+				<ref bean="pregunta26" />
+				<ref bean="pregunta27" />
+				<ref bean="pregunta28" />
+				<ref bean="pregunta29" />
+				<ref bean="pregunta30" />
+				<ref bean="pregunta31" />
+				<ref bean="pregunta32" />
+				<ref bean="pregunta33" />
+				<ref bean="pregunta34" />
+				<ref bean="pregunta35" />
+				<ref bean="pregunta36" />
+				<ref bean="pregunta37" />
+				<ref bean="pregunta38" />
+				<ref bean="pregunta39" />
+				<ref bean="pregunta40" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<!-- PREGUNTA -->
+
+	<bean id="pregunta1" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué es FIWARE?" />
+		<property name="numero" value="1" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta1" />
+				<ref bean="respuesta2" />
+				<ref bean="respuesta3" />
+				<ref bean="respuesta4" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta2" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Con qué icono se representa Fiware?" />
+		<property name="numero" value="2" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta5" />
+				<ref bean="respuesta6" />
+				<ref bean="respuesta7" />
+				<ref bean="respuesta8" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="pregunta3" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Es considerado como el internet del futuro y considerado el internet de las cosas" />
+		<property name="numero" value="3" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta9" />
+				<ref bean="respuesta10" />
+				<ref bean="respuesta11" />
+				<ref bean="respuesta12" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta4" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Compañia colabora en el trabajo de FIWARE" />
+		<property name="numero" value="4" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta13" />
+				<ref bean="respuesta14" />
+				<ref bean="respuesta15" />
+				<ref bean="respuesta16" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta5" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué es un GE de FIWARE?" />
+		<property name="numero" value="5" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta17" />
+				<ref bean="respuesta18" />
+				<ref bean="respuesta19" />
+				<ref bean="respuesta20" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta6" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cómo se llama el programa que FIWARE da 80 millones de euros para aplicaciones innovadoras o empresas?" />
+		<property name="numero" value="6" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta21" />
+				<ref bean="respuesta22" />
+				<ref bean="respuesta23" />
+				<ref bean="respuesta24" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta7" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál es uno de los programas de FIWARE ACCELERATE?" />
+		<property name="numero" value="7" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta25" />
+				<ref bean="respuesta26" />
+				<ref bean="respuesta27" />
+				<ref bean="respuesta28" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta8" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál es uno de los programas de FIWARE ACCELERATE?" />
+		<property name="numero" value="8" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta29" />
+				<ref bean="respuesta30" />
+				<ref bean="respuesta31" />
+				<ref bean="respuesta32" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta9" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál es uno de los programas de FIWARE ACCELERATE?" />
+		<property name="numero" value="9" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta33" />
+				<ref bean="respuesta34" />
+				<ref bean="respuesta35" />
+				<ref bean="respuesta36" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta10" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿ Qué es la plataforma FI-CORE?" />
+		<property name="numero" value="10" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta37" />
+				<ref bean="respuesta38" />
+				<ref bean="respuesta39" />
+				<ref bean="respuesta40" />
+			</list>
+		</property>	
+	</bean>
+	
+
+
+<bean id="pregunta11" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál de los siguientes conceptos es un GE(generic enable) de FIWARE?"/>
+		<property name="numero" value="11" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta41" />
+				<ref bean="respuesta42" />
+				<ref bean="respuesta43" />
+				<ref bean="respuesta44" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta12" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál de los siguientes conceptos es un GE(generic enable) de FIWARE?" />
+		<property name="numero" value="12" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta45" />
+				<ref bean="respuesta46" />
+				<ref bean="respuesta47" />
+				<ref bean="respuesta48" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="pregunta13" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál es la dirección de FIWARE-LAB?" />
+		<property name="numero" value="13" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta49" />
+				<ref bean="respuesta50" />
+				<ref bean="respuesta51" />
+				<ref bean="respuesta52" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta14" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Cuál es la arquitectura de FIWARE?" />
+		<property name="numero" value="14" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta53" />
+				<ref bean="respuesta54" />
+				<ref bean="respuesta55" />
+				<ref bean="respuesta56" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta15" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="El objectivo o objectivos principales del programa FIWARE es/son:" />
+		<property name="numero" value="15" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta57" />
+				<ref bean="respuesta58" />
+				<ref bean="respuesta59" />
+				<ref bean="respuesta60" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta16" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué necesitas para adentrarte en FIWARE?" />
+		<property name="numero" value="16" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta61" />
+				<ref bean="respuesta62" />
+				<ref bean="respuesta63" />
+				<ref bean="respuesta64" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta17" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Qué significa IoT?" />
+		<property name="numero" value="17" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta65" />
+				<ref bean="respuesta66" />
+				<ref bean="respuesta67" />
+				<ref bean="respuesta68" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta18" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Definición de  Hosting Cloud:" />
+		<property name="numero" value="18" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta69" />
+				<ref bean="respuesta70" />
+				<ref bean="respuesta71" />
+				<ref bean="respuesta72" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta19" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Hasta ahora la mayor concentración sobre Fiware fue:" />
+		<property name="numero" value="19" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta73" />
+				<ref bean="respuesta74" />
+				<ref bean="respuesta75" />
+				<ref bean="respuesta76" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta20" class="domain.Pregunta">
+		<property name="curso" ref="curso1" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Lema de la campaña de FIWARE" />
+		<property name="numero" value="20" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta77" />
+				<ref bean="respuesta78" />
+				<ref bean="respuesta79" />
+				<ref bean="respuesta80" />
+			</list>
+		</property>	
+	</bean>
+
+
+<!-- curso2 -->
+<bean id="pregunta21" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué tipo de GE(Generic Enable) de Fiware deberíamos utilizar para integrar la información multimedia?" />
+		<property name="numero" value="1" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta81" />
+				<ref bean="respuesta82" />
+				<ref bean="respuesta83" />
+				<ref bean="respuesta84" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta22" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Qué tipo de ENABLE de Fi-WARE deberemos utilizar si queremos introducir multimedia para sus aplicaciones (Como se denomina):" />
+		<property name="numero" value="2" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta85" />
+				<ref bean="respuesta86" />
+				<ref bean="respuesta87" />
+				<ref bean="respuesta88" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="pregunta23" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué implementación/es de API abierta proporciona Kurento?" />
+		<property name="numero" value="3" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta89" />
+				<ref bean="respuesta90" />
+				<ref bean="respuesta91" />
+				<ref bean="respuesta92" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta24" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="KURENTO proporciona a los desarrolladores un conjunto de capacidades de comunicación multimedia robustas de extremo a extremo para hacer frente a:" />
+		<property name="numero" value="4" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta93" />
+				<ref bean="respuesta94" />
+				<ref bean="respuesta95" />
+				<ref bean="respuesta96" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta25" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Por qué utilizar KURENTO de FI-WARE?" />
+		<property name="numero" value="5" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta97" />
+				<ref bean="respuesta98" />
+				<ref bean="respuesta99" />
+				<ref bean="respuesta100" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta26" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿KURENTO hace posible que el desarrollo de las comunicaciones multimedia interactivas complejas se realicen de una forma rápida, sencilla y fácil?" />
+		<property name="numero" value="6" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta101" />
+				<ref bean="respuesta102" />
+				<ref bean="respuesta103" />
+				<ref bean="respuesta104" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta27" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿De qué manera podemos acceder a Kurento?" />
+		<property name="numero" value="7" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta105" />
+				<ref bean="respuesta106" />
+				<ref bean="respuesta107" />
+				<ref bean="respuesta108" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta28" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="En la implementación de la infraestructura virtual de Kurento, ¿En qué sistema operativo esta soportado/s?" />
+		<property name="numero" value="8" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta109" />
+				<ref bean="respuesta110" />
+				<ref bean="respuesta111" />
+				<ref bean="respuesta112" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta29" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué tipo de GE de mediación posee Kurento?" />
+		<property name="numero" value="9" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta113" />
+				<ref bean="respuesta114" />
+				<ref bean="respuesta115" />
+				<ref bean="respuesta116" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta30" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿De qué se encarga Kurento Media Server?" />
+		<property name="numero" value="10" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta117" />
+				<ref bean="respuesta118" />
+				<ref bean="respuesta119" />
+				<ref bean="respuesta120" />
+			</list>
+		</property>	
+	</bean>
+	
+
+
+<bean id="pregunta31" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Kurento usa una tecnología peer-to-peer, donde los navegadores pueden comunicarse directamente sin la mediación de cualquier tipo de infraestructura. ¿Es suficiente este modelo para crear cualquier tipo de aplicaciones?" />
+		<property name="numero" value="11" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta121" />
+				<ref bean="respuesta122" />
+				<ref bean="respuesta123" />
+				<ref bean="respuesta124" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta32" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué es WebRTC?" />
+		<property name="numero" value="12" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta125" />
+				<ref bean="respuesta126" />
+				<ref bean="respuesta127" />
+				<ref bean="respuesta128" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="pregunta33" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Puedes utilizar kurento que incluyen una implementacion para clientes de java y javascript, pero si no usas ese lenguaje... puedes usar kurento?" />
+		<property name="numero" value="13" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta129" />
+				<ref bean="respuesta130" />
+				<ref bean="respuesta131" />
+				<ref bean="respuesta132" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta34" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿En qué se basa el protocolo Kurento?" />
+		<property name="numero" value="14" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta133" />
+				<ref bean="respuesta134" />
+				<ref bean="respuesta135" />
+				<ref bean="respuesta136" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta35" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué capacidad tiene WebRtcEndPoint?" />
+		<property name="numero" value="15" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta137" />
+				<ref bean="respuesta138" />
+				<ref bean="respuesta139" />
+				<ref bean="respuesta140" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="pregunta36" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué capacidad tiene RecorderEndPoint?" />
+		<property name="numero" value="16" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta141" />
+				<ref bean="respuesta142" />
+				<ref bean="respuesta143" />
+				<ref bean="respuesta144" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta37" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué capacidad tiene FaceOverlayFilter?" />
+		<property name="numero" value="17" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta145" />
+				<ref bean="respuesta146" />
+				<ref bean="respuesta147" />
+				<ref bean="respuesta148" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta38" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="En Kurento un gráfico de conectado elementos de los medios de comunicación se denomina:" />
+		<property name="numero" value="18" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta149" />
+				<ref bean="respuesta150" />
+				<ref bean="respuesta151" />
+				<ref bean="respuesta152" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="pregunta39" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="¿Qué tipo de mensajes utiliza el protocolo de Kurento?" />
+		<property name="numero" value="19" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta153" />
+				<ref bean="respuesta154" />
+				<ref bean="respuesta155" />
+				<ref bean="respuesta156" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="pregunta40" class="domain.Pregunta">
+		<property name="curso" ref="curso2" />
+		<property name="valorPregunta" value="1" />
+		<property name="enunciado" value="Una solicitud de objeto, es una llamada RPC se representa mediante el envío de un objeto de petición a un servidor. ¿Cuál representa un objeto request?" />
+		<property name="numero" value="20" />
+		<property name="respuestas">
+			<list>
+				<ref bean="respuesta157" />
+				<ref bean="respuesta158" />
+				<ref bean="respuesta159" />
+				<ref bean="respuesta160" />
+			</list>
+		</property>	
+	</bean>
+
+
+
+<!-- RESPUESTA -->
+	
+	<bean id="respuesta1" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta1" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="FIWARE o FI-WARE es una plataforma, impulsada por la Unión Europea, para el desarrollo y despliegue global de aplicaciones de Internet del Futuro" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion1" />
+				<ref bean="eleccion41" />
+				<ref bean="eleccion21" />
+				<ref bean="eleccion61" />
+				<ref bean="eleccion101" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta2" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta1" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es una serie de videojuegos en primera persona (FPS), de estilo bélico, creada por Ben Chichoski, desarrollada principal e inicialmente por Infinity Ward, y distribuida por Activision" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion81" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta3" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta1" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es una compañía estadounidense fundada en septiembre de 1998 cuyo producto principal es un motor de búsqueda creado por Larry Page y Sergey Brin" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta4" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta1" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es la Plataforma Tecnológica Española de Convergencia hacia Internet del pasado." />
+		
+		<property name="elecciones">
+			<list>	
+				<ref bean="eleccion2" />
+				<ref bean="eleccion42" />
+				<ref bean="eleccion22" />
+				<ref bean="eleccion62" />
+				<ref bean="eleccion102" />
+				<ref bean="eleccion82" />
+		
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta5" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta2" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Icono1" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta6" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta2" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Icono2" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta7" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta2" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Icono3" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta8" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta2" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Icono4" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta9" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta3" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Google" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta10" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta3" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Iphone" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta11" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta3" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna de las soluciones" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta12" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta3" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="FIWARE" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion3" />
+				<ref bean="eleccion43" />
+				<ref bean="eleccion23" />
+				<ref bean="eleccion63" />
+				<ref bean="eleccion103" />
+				<ref bean="eleccion83" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta13" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta4" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="TELEFONICA" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta14" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta4" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="VODAFONE" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion4" />
+				<ref bean="eleccion44" />
+				<ref bean="eleccion24" />
+				<ref bean="eleccion64" />
+				<ref bean="eleccion104" />
+				<ref bean="eleccion84" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta15" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta4" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="AMENA" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta16" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta4" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="SAMSUNG" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta17" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta5" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Es un elemento funcional de FI-WARE, cualquier implementación de un GE se forma con un conjunto de componentes que da una funcionalidad y provee unas APIs" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta18" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta5" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es una unidad de información dentro del genoma que contiene todos los elementos necesarios para su expresión de manera regulada" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion5" />
+				<ref bean="eleccion45" />
+				<ref bean="eleccion25" />
+				<ref bean="eleccion65" />
+				<ref bean="eleccion105" />
+				<ref bean="eleccion85" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta19" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta5" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es un aparato capaz de mantener una diferencia de cargas eléctricas entre dos puntos" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta20" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta5" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna de las anteriores" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta21" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta6" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE PROCESSATOR" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta22" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta6" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="FIWARE ACCELERATE" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta23" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta6" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE MONEY" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion6" />
+				<ref bean="eleccion46" />
+				<ref bean="eleccion26" />
+				<ref bean="eleccion66" />
+				<ref bean="eleccion106" />
+				<ref bean="eleccion86" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta24" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta6" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE PROGRAM" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta25" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta7" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Smart cities" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta26" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta7" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Sport" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta27" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta7" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Voluntario" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion7" />
+				<ref bean="eleccion47" />
+				<ref bean="eleccion27" />
+				<ref bean="eleccion67" />
+				<ref bean="eleccion107" />
+				<ref bean="eleccion87" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta28" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta7" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta29" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta8" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE SATELITE" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion8" />
+				<ref bean="eleccion48" />
+				<ref bean="eleccion28" />
+				<ref bean="eleccion68" />
+				<ref bean="eleccion108" />
+				<ref bean="eleccion88" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta30" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta8" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE NATURAL" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta31" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta8" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No tiene programas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta32" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta8" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="FIWARE EHEALTH" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta33" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta9" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE BENEFITS" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion9" />
+				<ref bean="eleccion49" />
+				<ref bean="eleccion29" />
+				<ref bean="eleccion69" />
+				<ref bean="eleccion109" />
+				<ref bean="eleccion89" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta34" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta9" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="FIWARE WHATS" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta35" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta9" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="FIWARE AGRIFOOD" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta36" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta9" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna de las anteriores" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta37" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta10" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Comprende un conjunto de habilitadores tecnológicos genéricos (GE: Generic Enablers) de uso general y común a varias “áreas de uso” actuales y futuros" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion50" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta38" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta10" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="se refieren a la tecnología utilizada para la creación y desarrollo de cursos o módulos didácticos en la Web (sibal) que se usan de manera más amplia en la Web 2.0 mejora de la comunicación aprendizaje y enseñanza" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta39" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta10" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No existe ese concepto" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion10" />
+				<ref bean="eleccion30" />
+				<ref bean="eleccion70" />
+				<ref bean="eleccion90" />
+				<ref bean="eleccion110" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta40" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta10" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es un espacio virtual de aprendizaje orientado a facilitar la experiencia de capacitación a distancia, tanto para empresas como para instituciones educativas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta41" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta11" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Massive" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta42" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta11" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="BigData" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta43" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta11" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Red" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion11" />
+				<ref bean="eleccion51" />
+				<ref bean="eleccion31" />
+				<ref bean="eleccion91" />
+				<ref bean="eleccion71" />
+				<ref bean="eleccion111" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta44" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta11" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Shine" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta45" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta12" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna de las posteriores" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta46" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta12" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Title" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta47" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta12" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Pavilion" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion12" />
+				<ref bean="eleccion52" />
+				<ref bean="eleccion72" />
+				<ref bean="eleccion92" />
+				<ref bean="eleccion112" />
+				<ref bean="eleccion32" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta48" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta12" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Context-Broken" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta49" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta13" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="http://lab.fiware.lab.org" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta50" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta13" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="labfiware.com" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta51" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta13" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="https://fiware-lab.org" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion13" />
+				<ref bean="eleccion53" />
+				<ref bean="eleccion33" />
+				<ref bean="eleccion73" />
+				<ref bean="eleccion113" />
+				<ref bean="eleccion93" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta52" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta13" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="www.labfiwareorg.com" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta53" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta14" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Arquitectura1" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion14" />
+				<ref bean="eleccion34" />
+				<ref bean="eleccion74" />
+				<ref bean="eleccion94" />
+				<ref bean="eleccion113" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta54" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta14" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Arquitectura2" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion54" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta55" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta14" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Arquitectura3" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta56" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta14" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Arquitectura4" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta57" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta15" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Identificación y especificación de GE" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta58" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta15" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Identificación de GE" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta59" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta15" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Especificación de GE" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta60" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta15" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguno de ellos" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion15" />
+				<ref bean="eleccion55" />
+				<ref bean="eleccion75" />
+				<ref bean="eleccion95" />
+				<ref bean="eleccion35" />
+				<ref bean="eleccion115" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta61" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta16" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Una buena idea" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta62" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta16" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Un plan de negocio" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta63" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta16" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Todas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta64" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta16" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Un buen equipo" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion16" />
+				<ref bean="eleccion56" />
+				<ref bean="eleccion76" />
+				<ref bean="eleccion96" />
+				<ref bean="eleccion36" />
+				<ref bean="eleccion116" />
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta65" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta17" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Internet of Things" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion57" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta66" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta17" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Internet of Throns" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion17" />
+				<ref bean="eleccion77" />
+				<ref bean="eleccion97" />
+				<ref bean="eleccion37" />
+				<ref bean="eleccion117" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta67" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta17" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Internet of Todos" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta68" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta17" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Internet of Tools" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta69" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta18" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es una capa que se encarga del testeado" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta70" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta18" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No es una capa de FIWARE" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion18" />
+				<ref bean="eleccion58" />
+				<ref bean="eleccion78" />
+				<ref bean="eleccion98" />
+				<ref bean="eleccion38" />
+				<ref bean="eleccion118" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta71" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta18" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Es la capa fundamental que ofrece la computación, almacenamiento y recursos de red" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta72" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta18" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es una capa que se encarga de las instalaciones de acceso a efectivo" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta73" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta19" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Campus party España " />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta74" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta19" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Campus party Francia" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta75" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta19" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Campus party Alemania" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion19" />
+				<ref bean="eleccion99" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta76" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta19" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Campus party Brasil" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion39" />
+				<ref bean="eleccion59" />
+				<ref bean="eleccion79" />
+				<ref bean="eleccion119" />
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta77" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta20" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Conectando las ciudades al internet del futuro" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion40" />
+				<ref bean="eleccion60" />
+				<ref bean="eleccion80" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta78" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta20" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Conecta a todos juntos" />
+		
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion20" />
+				<ref bean="eleccion100" />
+				<ref bean="eleccion120" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta79" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta20" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Juntos usando algo nuevo" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta80" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta20" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Todo para mejor" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<!-- RESPUESTAS preguntas curso 2 -->
+
+<bean id="respuesta81" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta21" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="BigData" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta82" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta21" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="ContextBroken" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta83" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta21" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Real Time Stream Media" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta84" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta21" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No es posible" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta85" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta22" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="RealLife" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta86" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta22" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Kurento" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta87" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta22" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="BigTime" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta88" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta22" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cualquier nombre" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta89" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta23" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Todas son correctas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta90" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta23" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cliente java" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta91" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta23" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cliente javascript" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta92" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta23" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cliente NodelJs" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta93" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta24" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Transporte, codificación/decodificación, procesamiento y representación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta94" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta24" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Tamaño" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta95" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta24" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="La lentitud" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta96" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta24" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Todas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta97" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta25" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Por su estilismo" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta98" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta25" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Para involucrar:  comunicaciones interoperables audiovisuales, la visión por ordenador, realidad aumentada, flexibles de juego los medios de comunicación, grabación, etc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta99" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta25" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Por su economía y conocimiento entre ingenieros de alta reputación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta100" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta25" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Todas falsas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta101" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta26" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta102" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta26" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Si" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta103" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta26" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta104" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta26" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ambas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta105" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta27" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="En nuestros propios pc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta106" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta27" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No hay manera" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta107" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta27" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Inventandose" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta108" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta27" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Acceder a la FI-WARE Portal Cloud (http://cloud.lab.fi-ware.eu), y en Imágenes seleccionar la imagen Kurento-Imagen-Rn. Luego aparecerá en Instancias" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta109" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta28" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Windows 7 o superiores" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta110" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta28" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Windows inferiores a 7" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta111" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta28" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cualquier sistema operativo" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta112" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta28" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Solo ubuntu 14.04" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta113" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta29" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Data Mediation" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta114" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta29" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Todos" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta115" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta29" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Protocol Mediation" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta116" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta29" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Process Mediation" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta117" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta30" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Es responsable de la transmisión de los medios de comunicación, transformación, carga y grabación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta118" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta30" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="De nada es una implementación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta119" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta30" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Es el que hace de intermediario entre comunicación y aplicación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta120" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta30" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Todas falsas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta121" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta31" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="No, para tales como comunicaciones de grupo, la grabación de flujo de medios, medios de comunicación o difusión de transcodificación de medios son difíciles y requieren el uso de un servidor de medios" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta122" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta31" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No pero no hay otro" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta123" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta31" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Si" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta124" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta31" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Todas falsas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta125" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta32" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Todas falsas" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta126" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta32" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Un servidor de medios, es sólo una especie de middleware multimedia (está en el medio de la comunicación), donde el tráfico de medios pasan a través de cuando se mueve desde el origen al destino" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta127" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta32" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Un dispositivo" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta128" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta32" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Un tipo de estructura" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta129" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta33" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta130" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta33" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Si, porque puedes utilizar directamente el protocolo kurento" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta131" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta33" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Si, sin utilizar Kurento" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta132" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta33" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="No, existe posibilidades" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta133" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta34" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="En dispositivos" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta134" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta34" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="En estándares de Wirecloud" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta135" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta34" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="En Lab-View" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta136" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta34" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Se basa en estándares de Internet tales como WebSocket yJSON-RPC" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta137" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta35" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Enviar y medios receivingWebRtc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta138" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta35" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Grabación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta139" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta35" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Escuchar música" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta140" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta35" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Detectar caras en las secuencias de vídeo intercambiados y añade una superpuesta específica" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta141" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta36" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Grabación en el sistema de archivos de cualquier medio de comunicación" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta142" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta36" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Enviar de medios receivingWebRtc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta143" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta36" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Detección de caras en las secuencias de vídeo intercambiados y añade una superpuesta específica" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta144" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta36" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+
+<bean id="respuesta145" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta37" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Reproducir" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta146" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta37" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Grabar" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta147" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta37" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Enviar y medios mediante receivingWebRtc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta148" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta37" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Detectar las caras en las secuencias de vídeo intercambiados y añade una superpuesta específica imagen en la parte superior de ellos, etc" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta149" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta38" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Application Logic" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta150" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta38" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Browser" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta151" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta38" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Media Pipeline" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta152" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta38" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Ninguna" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta153" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta39" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Mensajes HTTP" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta154" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta39" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Mensajes formato JSON-RPC" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta155" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta39" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Mensajes texto" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta156" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta39" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Cualquier tipo de mensaje" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+
+<bean id="respuesta157" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta40" />
+		<property name="solucion" value="TRUE" />
+		<property name="puntuacion" value="1" />
+		<property name="texto" value="Codigo1" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="respuesta158" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta40" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Codigo2" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta159" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta40" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Codigo3" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	<bean id="respuesta160" class="domain.Respuesta">
+		<property name="pregunta" ref="pregunta40" />
+		<property name="solucion" value="FALSE" />
+		<property name="puntuacion" value="0" />
+		<property name="texto" value="Codigo4" />
+		
+		<property name="elecciones">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<!--  RETOS -->
+	
+		<bean id="reto1" class="domain.Reto">
+		<property name="curso" ref="curso1" />
+		<property name="administrador" ref="admin2" />
+		<property name="visible" value="TRUE" />
+		<property name="nombre" value="Reto1 Introducción a Fiware" />
+		<property name="tiempoMax" value="600" />
+		<property name="fechaValida" value="09/07/2015 00:00" />
+		<property name="partidas">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+		<bean id="reto2" class="domain.Reto">
+		<property name="curso" ref="curso1" />
+		<property name="administrador" ref="admin2" />
+		<property name="visible" value="FALSE" />
+		<property name="nombre" value="Reto2 Introducción a Fiware Anterior" />
+		<property name="tiempoMax" value="600" />
+		<property name="fechaValida" value="03/09/2015 00:00" />
+		<property name="partidas">
+			<list>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="reto3" class="domain.Reto">
+		<property name="curso" ref="curso1" />
+		<property name="administrador" ref="admin2" />
+		<property name="visible" value="FALSE" />
+		<property name="nombre" value="Reto3 Introducción a Fiware Segundo" />
+		<property name="tiempoMax" value="600" />
+		<property name="fechaValida" value="02/09/2015 00:00" />
+		<property name="partidas">
+			<list>
+				<ref bean="partida1" />
+				<ref bean="partida2" />
+				<ref bean="partida3" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	
+	
+	
+	<!--  PARTIDA -->
+	
+	<bean id="partida1" class="domain.Partida">
+		<property name="reto" ref="reto3" />
+		<property name="fechaRealizacion" value="01/02/2015 00:00" />
+		<property name="estado" value="terminada" />
+		<property name="resultadoparticipantes">
+			<list>
+				<ref bean="resultadoparticipantes1" />
+				<ref bean="resultadoparticipantes2" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="partida2" class="domain.Partida">
+		<property name="reto" ref="reto2" />
+		<property name="fechaRealizacion" value="01/03/2015 00:00" />
+		<property name="estado" value="terminada" />
+		<property name="resultadoparticipantes">
+			<list>
+				<ref bean="resultadoparticipantes3" />
+				<ref bean="resultadoparticipantes4" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	<bean id="partida3" class="domain.Partida">
+		<property name="reto" ref="reto2" />
+		<property name="fechaRealizacion" value="01/02/2015 00:00" />
+		<property name="estado" value="terminada" />
+		<property name="resultadoparticipantes">
+			<list>
+				<ref bean="resultadoparticipantes5" />
+				<ref bean="resultadoparticipantes6" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	
+		<!--  RESULTADO PARTICIPANTES -->
+	
+	<bean id="resultadoparticipantes1" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador1" />
+		<property name="partida" ref="partida1" />
+		<property name="puntuacion" value="2" />
+		<property name="tiempo" value="100" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion1" />
+				<ref bean="eleccion2" />
+				<ref bean="eleccion3" />
+				<ref bean="eleccion4" />
+				<ref bean="eleccion5" />
+				<ref bean="eleccion6" />
+				<ref bean="eleccion7" />
+				<ref bean="eleccion8" />
+				<ref bean="eleccion9" />
+				<ref bean="eleccion10" />
+				<ref bean="eleccion11" />
+				<ref bean="eleccion12" />
+				<ref bean="eleccion13" />
+				<ref bean="eleccion14" />
+				<ref bean="eleccion15" />
+				<ref bean="eleccion16" />
+				<ref bean="eleccion17" />
+				<ref bean="eleccion18" />
+				<ref bean="eleccion19" />
+				<ref bean="eleccion20" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="resultadoparticipantes2" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador2" />
+		<property name="partida" ref="partida1" />
+		<property name="puntuacion" value="4" />
+		<property name="tiempo" value="122" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion21" />
+				<ref bean="eleccion22" />
+				<ref bean="eleccion23" />
+				<ref bean="eleccion24" />
+				<ref bean="eleccion25" />
+				<ref bean="eleccion26" />
+				<ref bean="eleccion27" />
+				<ref bean="eleccion28" />
+				<ref bean="eleccion29" />
+				<ref bean="eleccion30" />
+				<ref bean="eleccion31" />
+				<ref bean="eleccion32" />
+				<ref bean="eleccion33" />
+				<ref bean="eleccion34" />
+				<ref bean="eleccion35" />
+				<ref bean="eleccion36" />
+				<ref bean="eleccion37" />
+				<ref bean="eleccion38" />
+				<ref bean="eleccion39" />
+				<ref bean="eleccion40" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="resultadoparticipantes3" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador5" />
+		<property name="partida" ref="partida2" />
+		<property name="puntuacion" value="7" />
+		<property name="tiempo" value="161" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion41" />
+				<ref bean="eleccion42" />
+				<ref bean="eleccion43" />
+				<ref bean="eleccion44" />
+				<ref bean="eleccion45" />
+				<ref bean="eleccion46" />
+				<ref bean="eleccion47" />
+				<ref bean="eleccion48" />
+				<ref bean="eleccion49" />
+				<ref bean="eleccion50" />
+				<ref bean="eleccion51" />
+				<ref bean="eleccion52" />
+				<ref bean="eleccion53" />
+				<ref bean="eleccion54" />
+				<ref bean="eleccion55" />
+				<ref bean="eleccion56" />
+				<ref bean="eleccion57" />
+				<ref bean="eleccion58" />
+				<ref bean="eleccion59" />
+				<ref bean="eleccion60" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="resultadoparticipantes4" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador6" />
+		<property name="partida" ref="partida2" />
+		<property name="puntuacion" value="4" />
+		<property name="tiempo" value="22" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion61" />
+				<ref bean="eleccion62" />
+				<ref bean="eleccion63" />
+				<ref bean="eleccion64" />
+				<ref bean="eleccion65" />
+				<ref bean="eleccion66" />
+				<ref bean="eleccion67" />
+				<ref bean="eleccion68" />
+				<ref bean="eleccion69" />
+				<ref bean="eleccion70" />
+				<ref bean="eleccion71" />
+				<ref bean="eleccion72" />
+				<ref bean="eleccion73" />
+				<ref bean="eleccion74" />
+				<ref bean="eleccion75" />
+				<ref bean="eleccion76" />
+				<ref bean="eleccion77" />
+				<ref bean="eleccion78" />
+				<ref bean="eleccion79" />
+				<ref bean="eleccion80" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="resultadoparticipantes5" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador7" />
+		<property name="partida" ref="partida3" />
+		<property name="puntuacion" value="1" />
+		<property name="tiempo" value="192" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion81" />
+				<ref bean="eleccion82" />
+				<ref bean="eleccion83" />
+				<ref bean="eleccion84" />
+				<ref bean="eleccion85" />
+				<ref bean="eleccion86" />
+				<ref bean="eleccion87" />
+				<ref bean="eleccion88" />
+				<ref bean="eleccion89" />
+				<ref bean="eleccion90" />
+				<ref bean="eleccion91" />
+				<ref bean="eleccion92" />
+				<ref bean="eleccion93" />
+				<ref bean="eleccion94" />
+				<ref bean="eleccion95" />
+				<ref bean="eleccion96" />
+				<ref bean="eleccion97" />
+				<ref bean="eleccion98" />
+				<ref bean="eleccion99" />
+				<ref bean="eleccion100" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="resultadoparticipantes6" class="domain.ResultadoParticipantes">
+		<property name="jugador" ref="jugador4" />
+		<property name="partida" ref="partida3" />
+		<property name="puntuacion" value="6" />
+		<property name="tiempo" value="82" />
+		<property name="cerrada" value="TRUE" />
+		<property name="elecciones">
+			<list>
+				<ref bean="eleccion101" />
+				<ref bean="eleccion102" />
+				<ref bean="eleccion103" />
+				<ref bean="eleccion104" />
+				<ref bean="eleccion105" />
+				<ref bean="eleccion106" />
+				<ref bean="eleccion107" />
+				<ref bean="eleccion108" />
+				<ref bean="eleccion109" />
+				<ref bean="eleccion110" />
+				<ref bean="eleccion111" />
+				<ref bean="eleccion112" />
+				<ref bean="eleccion113" />
+				<ref bean="eleccion114" />
+				<ref bean="eleccion115" />
+				<ref bean="eleccion116" />
+				<ref bean="eleccion117" />
+				<ref bean="eleccion118" />
+				<ref bean="eleccion119" />
+				<ref bean="eleccion120" />
+			</list>
+		</property>	
+	</bean>
+	
+	
+	
+	
+	
+	
+
+
+
+	
+	<!--  ELECCION -->
+	
+	<!--  resultado participantes 1 -->
+	<bean id="eleccion1" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta1" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 01:00" />
+	</bean>
+	<bean id="eleccion2" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion3" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion4" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion5" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion6" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion7" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion8" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion9" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion10" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta39" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion11" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion12" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion13" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion14" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta53" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion15" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion16" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion17" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta66" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion18" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion19" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta75" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 04:55" />
+	</bean>
+	<bean id="eleccion20" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta78" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes1" />
+		<property name="selloDelTiempo" value="01/02/2015 05:00" />
+	</bean>
+	
+	<!--  resultado participantes 2 -->
+		<bean id="eleccion21" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta1" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 01:00" />
+	</bean>
+	<bean id="eleccion22" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion23" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion24" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion25" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion26" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion27" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion28" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion29" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion30" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta39" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion31" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion32" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion33" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion34" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta53" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion35" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion36" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion37" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta66" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion38" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion39" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta76" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 04:55" />
+	</bean>
+	<bean id="eleccion40" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta77" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes2" />
+		<property name="selloDelTiempo" value="01/02/2015 05:00" />
+	</bean>
+
+
+
+<!--  resultado participantes 3 -->
+		<bean id="eleccion41" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta1" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 01:00" />
+	</bean>
+	<bean id="eleccion42" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion43" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion44" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion45" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion46" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion47" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion48" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion49" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion50" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta37" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion51" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion52" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion53" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion54" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta54" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion55" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion56" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion57" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta65" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion58" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion59" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta76" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 04:55" />
+	</bean>
+	<bean id="eleccion60" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta77" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes3" />
+		<property name="selloDelTiempo" value="08/03/2015 05:00" />
+	</bean>
+	
+	
+	
+		<!--  resultado participantes 4 -->
+		<bean id="eleccion61" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta1" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 01:00" />
+	</bean>
+	<bean id="eleccion62" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion63" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion64" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion65" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion66" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion67" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion68" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion69" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion70" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta39" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion71" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion72" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/02/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion73" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/02/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion74" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta53" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/02/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion75" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion76" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion77" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta66" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion78" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion79" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta76" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 04:55" />
+	</bean>
+	<bean id="eleccion80" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta77" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes4" />
+		<property name="selloDelTiempo" value="01/03/2015 05:00" />
+	</bean>
+	
+
+<!--  resultado participantes 5 -->
+	<bean id="eleccion81" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta2" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 01:00" />
+	</bean>
+	<bean id="eleccion82" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion83" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion84" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion85" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion86" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion87" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion88" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion89" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion90" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta39" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion91" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion92" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion93" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="01/02/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion94" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta53" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="01/02/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion95" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="01/02/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion96" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion97" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta66" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion98" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion99" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta75" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 04:55" />
+	</bean>
+	<bean id="eleccion100" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta78" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes5" />
+		<property name="selloDelTiempo" value="10/03/2015 05:00" />
+	</bean>
+	
+	
+	
+			<!--  resultado participantes 6 -->
+		<bean id="eleccion101" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta1" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 01:00" />
+	</bean>
+	<bean id="eleccion102" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta5" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 02:00" />
+	</bean>
+	
+	<bean id="eleccion103" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta12" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion104" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta14" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:00" />
+	</bean>
+	
+	<bean id="eleccion105" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta18" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:02" />
+	</bean>
+	
+	<bean id="eleccion106" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta23" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:03" />
+	</bean>
+	
+	<bean id="eleccion107" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta27" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:05" />
+	</bean>
+	
+	<bean id="eleccion108" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta29" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:06" />
+	</bean>
+	
+	<bean id="eleccion109" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta33" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:07" />
+	</bean>
+	
+	<bean id="eleccion110" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta39" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:08" />
+	</bean>
+	
+	<bean id="eleccion111" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta43" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 03:09" />
+	</bean>
+	
+	<bean id="eleccion112" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta47" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/02/2015 03:10" />
+	</bean>
+	
+	<bean id="eleccion113" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta51" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/02/2015 04:05" />
+	</bean>
+	
+	<bean id="eleccion114" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta53" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/02/2015 04:06" />
+	</bean>
+	
+	<bean id="eleccion115" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta60" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 04:15" />
+	</bean>
+	
+	<bean id="eleccion116" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta64" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 04:25" />
+	</bean>
+	
+	<bean id="eleccion117" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta66" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 04:35" />
+	</bean>
+	
+	<bean id="eleccion118" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta70" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 04:45" />
+	</bean>
+	
+	<bean id="eleccion119" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta76" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 04:55" />
+	</bean>
+	<bean id="eleccion120" class="domain.Eleccion">
+		<property name="respuesta" ref="respuesta78" />
+		<property name="resultadoParticipantes" ref="resultadoparticipantes6" />
+		<property name="selloDelTiempo" value="01/03/2015 05:00" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="700dp"
+        android:background="@color/black"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bienv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="7dp"
+            android:text="@string/partida"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/preguntaMostrar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bienv"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="7dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/list1"
+            android:layout_width="fill_parent"
+            android:layout_height="270dp"
+            android:layout_below="@+id/preguntaMostrar"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/shapelistaspreguntas"
+            android:choiceMode="singleChoice"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb" />
+
+        <TextView
+            android:id="@+id/bienv2"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list1"
+            android:layout_marginTop="56dp"
+            android:layout_toLeftOf="@+id/siguiente"
+            android:layout_toRightOf="@+id/anterior"
+            android:background="@drawable/titimepo"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="7dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/siguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bienv2"
+            android:layout_alignBottom="@+id/bienv2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/shapepreguntas"
+            android:paddingTop="7dp"
+            android:text="@string/pfinalizar" />
+
+        <Button
+            android:id="@+id/anterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/bienv2"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/shapepreguntas"
+            android:paddingTop="7dp"
+            android:text="@string/patras" />
+
+        <TextView
+            android:id="@+id/seleccionado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/list1"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="17dp"
+            android:textColor="#FF0040"
+            android:textSize="7sp"
+            tools:ignore="SmallSp" />
+    </RelativeLayout>
+
+</ScrollView>

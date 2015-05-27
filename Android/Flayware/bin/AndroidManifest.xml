@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.flayware"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    
+        <uses-permission android:name="android.permission.INTERNET" />
+
+    <permission
+        android:name="org.example.whatson.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.flayware.DrawableActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="UserLogin"></activity>
+        <activity android:name="Menu" android:label="Menu"></activity>
+        <activity android:name="PantallaInicio" android:label="Inicio"></activity>
+        <activity android:name="Register" android:label="Register"></activity>
+        <activity android:name="AcercaDe" android:label="AcercaDe" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:label="ListaCursos" android:name="ListCursos"></activity>
+        <activity android:name="ListRetos" android:label="ListaRetos"></activity>
+        <activity android:label="Descargas" android:name="Descargas"></activity>
+        <activity android:label="CursoDetails" android:name="CursoDetails"></activity>
+        <activity android:label="RetoDetails" android:name="RetosDetails"></activity>
+        <activity android:name="ListPartidas" android:label="ListaPartidas"></activity>
+        <activity android:name="ListPuntuacion" android:label="ListaPuntuacion"></activity>
+        <activity android:name="Ganador"></activity>
+        <activity android:name="Editar"></activity>
+        <activity android:name="Partida"></activity>
+        <activity android:name="Partida10"></activity>
+        <activity android:name="Partida11"></activity>
+        <activity android:name="Partida12"></activity>
+        <activity android:name="Partida13"></activity>
+        <activity android:name="Partida14"></activity>
+        <activity android:name="Partida15"></activity>
+        <activity android:name="Partida16"></activity>
+        <activity android:name="Partida17"></activity>
+        <activity android:name="Partida18"></activity>
+        <activity android:name="Partida19"></activity>
+        <activity android:name="Partida2"></activity>
+        <activity android:name="Partida20"></activity>
+        <activity android:name="Partida3"></activity>
+        <activity android:name="Partida4"></activity>
+        <activity android:name="Partida5"></activity>
+        <activity android:name="Partida6"></activity>
+        <activity android:name="Partida7"></activity>
+        <activity android:name="Partida8"></activity>
+        <activity android:name="Partida9"></activity>
+    </application>
+
+</manifest>

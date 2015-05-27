@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/ranking"
+        android:textColor="@color/white"
+        android:paddingTop="20sp"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@drawable/shapelistas"
+        android:padding="7dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="7dp" >
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+       		android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+            android:divider="@color/white"
+			android:dividerHeight="1dp"
+       	     android:drawSelectorOnTop="false" />
+
+        <TextView
+            android:id="@android:id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/cargando"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/black"
+            android:textColorLink="@color/black" />
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+      android:paddingBottom="7dp"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:paddingTop="7dp" >
+
+        <Button
+        android:id="@+id/bvolver"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/volver"
+        android:background="@drawable/shapevolver"/>
+    </LinearLayout>
+    
+    
+</LinearLayout>

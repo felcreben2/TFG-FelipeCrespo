@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:orientation="vertical" >
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dip"
+        android:fontFamily="comic-sans"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/detallecurso"
+        android:paddingTop="20sp"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <TableRow
+        android:id="@+id/NombreCursoRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp" >
+
+        <TextView
+            android:id="@+id/NombreCurso"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:textColor="@color/white"
+            android:text="@string/nombrecurso"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NombreCursoMostrar"
+            android:layout_width="0dip"
+        android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+        android:layout_marginBottom="30dip"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/NumPreguntas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"  >
+
+        <TextView
+            android:id="@+id/NumPreguntasCurso"
+            android:layout_width="0dip"
+        android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/numpreguntascurso"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NumPreguntasMostrar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+        android:textColor="@color/white"
+        android:layout_marginBottom="30dip"/>
+        
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/Tematica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"  >
+
+        <TextView
+            android:id="@+id/TematicaCurso"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+        android:textColor="@color/white"
+            android:text="@string/tematicacurso"
+        	android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TematicaMostrar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:textColor="@color/white"
+        android:layout_marginBottom="180dip"
+         />
+        
+    </TableRow>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" 
+      android:paddingBottom="7dp"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:paddingTop="7dp">
+    
+    <Button
+        android:id="@+id/volver"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        android:textAlignment="center"
+        android:background="@drawable/shapevolver"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
+</TableLayout>
